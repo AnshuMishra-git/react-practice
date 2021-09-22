@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
+import dummyData from '../FakeData/dummyData'
 
 // let react={
 //     component:"dergerg"
 // }
 export default class BasicJs extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state={
-            val:0  
+        this.state = {
+            val: 0
         }
     }
     // jb hum log class banate tb contructor call hota h
@@ -15,7 +16,7 @@ export default class BasicJs extends Component {
     // Contrcutor State ( initial Value Set karate h )
     // Component Did Mount all Function andr sare function call
 
-    allConditons(){ 
+    allConditons() {
         // If 
         // Else if
         // Else
@@ -60,7 +61,7 @@ export default class BasicJs extends Component {
         // let today ="sunday";
         // today == "sunday" ? console.log("WeakEnd") : console.log("WeaK Days");
     }
-    nextCond(){
+    nextCond() {
         // console.log("Next Cond function")
         // Loop - Tb use krna h jb aap same kam ko multiple time karoge
 
@@ -72,14 +73,14 @@ export default class BasicJs extends Component {
         // Foor Loop can use in Loop
 
         // Map Function , Foreach Function Both Worked on Array
-    
+
 
         // for(let i=10;i!=0;i=i-2){
         //     console.log(i)
         // }
         // a[0]
         // let a=[1,2,3,4,5]
-        
+
         // a.forEach((val,i)=>{
         //     // a[i] == val in ForEarch 
         //     console.log("Val====>",val,"i===>",i)
@@ -180,16 +181,17 @@ export default class BasicJs extends Component {
         // console.log("id",id,"dob",dob);
     }
 
-    componentDidMount(){
+    componentDidMount() {
         // this.allConditons();
         this.nextCond();
+        console.log("Dummy Data==>", dummyData)
     }
 
 
     render() {
         return (
             <div>
-               <h1> Condition and Iteration </h1>
+                <h1> Condition and Iteration </h1>
             </div>
         )
     }
