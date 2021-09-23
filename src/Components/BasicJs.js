@@ -291,21 +291,49 @@ export default class BasicJs extends Component {
     //         // console.log("I>",i)
     //     }
     // }
+    // data = 
+    // {
+    //     "id": 1,
+    //     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    //     "price": 109.95,
+    //     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    //     "category": "men's clothing",
+    //     "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+    //     "rating": {
+    //         "rate": 3.9,
+    //         "count": 120
+    //     }
+    // },
+    // 4%2 =0 
 
-
-
+    // console.log("Val===>", val);
+    // val[i]  === Data 
+    // console.log("index", i, "Index + 1 ", i + 1, "cond", (i + 1) % 2 == 0, "Reminder", (i + 1) % 2)
     forcondition() {
-        for (let i = 0; i < 4; i++) {
-            // document.write(i)
-            console.log("i===>", i)
-        }
+        // const val = dummyData;
+        // val.forEach((data, i) => {
+        //     let { id, image, price } = data;
+        //     if (id % 2 == 0) {
+        //         console.log("Data=>>>", data);
+        //         document.write(`<p><img  style="width:100px;" src=${image} ><br>${price} <br> ${id} </p>`)
+        //     }
+        // })
+        // for (let i = 0; i < val.length; i++) {
+        // console.log("Data", val[i]);
+        // let { id, image, price } = val[i];
+        // console.log("Id", id);
+        // console.log("Alternate way", val[i].id);
+        // if (id % 2 == 0) console.log("I")
+        // document.write(`<p><img  style="width:100px;" src=${val[i].image} ><br>${val[i].price} <br> ${val[i].id} </p>`)
+        // document.write(`<p><img  style="width:100px;" src=${image} ><br>${price} <br> ${id} </p>`)
     }
+
 
 
     ternaryOperator() {
         //  hardwork == "honesty is hardwork" ? console.log("WeakEnd") : console.log("WeaK Days");
-        let marriageage = 21;
-        marriageage <= 21 ? document.write("<br/>", "Married") : document.write("<br/>", "Un Married");
+        // let marriageage = 21;
+        // marriageage <= 21 ? document.write("<br/>", "Married") : document.write("<br/>", "Un Married");
     }
 
     urlparameter() {
@@ -321,7 +349,7 @@ export default class BasicJs extends Component {
             const [, protocol, fullhost, fullpath] = parsedURL;
             return protocol;
         }
-        document.write(parseProtocol("<br/>", "<br/>", 'http://localhost:3000/'))
+        // document.write(parseProtocol("<br/>", "<br/>", 'http://localhost:3000/'))
         // "https"
     }
 
@@ -351,9 +379,20 @@ export default class BasicJs extends Component {
             <div>
                 <h1> Condition and Iteration </h1>
                 <div id="demo"></div>
-
-                <img style={{ width: 200 }} src="https://images.unsplash.com/photo-1561016444-14f747499547?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1631&q=80" />
-            </div>
+                {
+                    dummyData.map((data) => (
+                        data.id % 2 == 0 ?
+                            <div>
+                                <span>------------</span>
+                                <h1>{data.id}</h1>
+                                <img style={{ width: 200 }} src={data.image} />
+                                <h2>Price : {data.price}</h2>
+                                <span>------------</span>
+                            </div> : <> {data.id}  + No</>
+                    ))
+                }
+                {/* <img style={{ width: 200 }} src="https://images.unsplash.com/photo-1561016444-14f747499547?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1631&q=80" /> */}
+            </div >
         )
     }
 }
