@@ -182,31 +182,30 @@ export default class BasicJs extends Component {
     // }
 
     ageVote() {
-        let age = 18;
-        if (age || 65) {
-            document.write("<h1>You are eligible for vote</h1>")
-            // console.log("You are eligible for vote test")
-        }
-        else {
-            document.write("<h1>You are not eligible not for vote</h1>")
-        }
+        // console.log("You are eligible for vote test")
+        // if(18) (expression) => Calcualte  
+        let age = 90;
+        if (age == 18) document.write("<h1>You are eligible now  vote</h1>");
+        else if (age < 65 && age > 19) document.write("<h1>You Can Vote</h1>");
+        else document.write("<h1>You are not eligible not for vote</h1>");
     }
 
     forloop() {
-        let a = ['Test', 'test2', 'test3'];
+        let a = ['Test1', 'test2', 'test3'];
         for (let i = 0; i < a.length; i++) {
             document.write(">>", "", a[i])
         }
+        //array index always start from 0
     }
 
-    imageFunction(){
+    imageFunction() {
         let myImage = document.querySelector('img');
-        myImage.onclick = function() {
+        myImage.onclick = function () {
             let mySrc = myImage.getAttribute('src');
-            if(mySrc === 'images/firefox-icon.png') {
-            myImage.setAttribute('src','images/firefox2.png');
+            if (mySrc === 'images/firefox-icon.png') {
+                myImage.setAttribute('src', 'images/firefox2.png');
             } else {
-            myImage.setAttribute('src','images/firefox-icon.png');
+                myImage.setAttribute('src', 'images/firefox-icon.png');
             }
         }
     }
@@ -214,46 +213,47 @@ export default class BasicJs extends Component {
 
     yearsFunction() {
         let years = dummyData
-        for (let i = 18; i < years.length; i++) {
-            document.write("<br/>", "<br/>", years[i].id,
-                "<br/>", years[i].title, "<br/>", years[i].price, "<br/>", years[i].rating)
+        // // console.log("Length===>", years.length)
+        for (let i = years.length - 10; i < years.length; i++) {
+            // console.log("Data===>", years[i].id, years[i].rating.count);
         }
     }
 
-    destructre(){
+    destructre() {
         const foo = dummyData;
-        const [green, green1, green2, green4, green7] = foo;
-        document.write("<br/>","<br/>", green7.description);
+        const [one, two, three, four, five, six, seven] = foo;
+        // document.write("<br/>", "<br/>", green7.description);
     }
 
-    seprate(){
-        let message, notmessage;
-        [message, notmessage] = [1000, 2000];
-        document.write("<br/>",message); // 1
-        document.write("<br/>",notmessage);
+    seprate() {
+        // let message, notmessage;
+        let [message, notmessage] = [1000, 2000];
+        // console.log("Destructure ===>>>", message, notmessage);
+        // document.write("<br/>", message); // 1
+        // document.write("<br/>", notmessage);
     }
 
-    arrayFunction(){
+    arrayFunction() {
         let a = 1;
         let b = 3;
 
         [a, b] = [b, a];
-        document.write(a); // 3
-        document.write(b); // 1
+        // document.write(a); // 3
+        // document.write(b); // 1
 
-        const arr = [1,2,3];
+        const arr = [1, 2, 3];
         [arr[2], arr[1]] = [arr[1], arr[2]];
-        document.write(arr); // [1,3,2]
+        // document.write(arr); // [1,3,2]
     }
 
 
- // const person = {
-        //     name:"Mangilal",
-        //     age:34,
-        //     address:"Ahmedabad",
-        //     isMaried:true
-        // };
-        // const {name,age,address,isMaried}= person;
+    // const person = {
+    //     name:"Mangilal",
+    //     age:34,
+    //     address:"Ahmedabad",
+    //     isMaried:true
+    // };
+    // const {name,age,address,isMaried}= person;
 
     // destructureFunction() {
     //     const persondata = dummyData
@@ -266,15 +266,17 @@ export default class BasicJs extends Component {
     // }
 
 
-    foreachfunction(){
+    foreachfunction() {
         let text = "";
         const fruits = dummyData;
         fruits.forEach(myFunction);
-        
-        document.getElementById("demo").innerHTML = text;
-         
+
+        // document.getElementById("demo").innerHTML = text;
+
         function myFunction(item, index) {
-          text += index + ": " + dummyData[0] + "<br>"; 
+            // console.log("item", item);
+            // console.log("index", index + 1);
+            // text += index + ": " + dummyData[0] + "<br>";
         }
     }
 
@@ -290,44 +292,45 @@ export default class BasicJs extends Component {
     //     }
     // }
 
-    
 
-    forcondition(){
-        for(let i=5; i<4; i=i*1){
-            document.write(i)
-        }        
+
+    forcondition() {
+        for (let i = 0; i < 4; i++) {
+            // document.write(i)
+            console.log("i===>", i)
+        }
     }
 
 
-    ternaryOperator(){
+    ternaryOperator() {
         //  hardwork == "honesty is hardwork" ? console.log("WeakEnd") : console.log("WeaK Days");
-        let marriageage = 21; 
-        marriageage <= 21 ? document.write("<br/>", "Married"): document.write("<br/>","Un Married");
+        let marriageage = 21;
+        marriageage <= 21 ? document.write("<br/>", "Married") : document.write("<br/>", "Un Married");
     }
 
-    urlparameter(){
+    urlparameter() {
         function parseProtocol(url) {
             const parsedURL = /^(\w+)\:\/\/([^\/]+)\/(.*)$/.exec(url);
             if (!parsedURL) {
-              return false;
+                return false;
             }
             document.write(parsedURL);
             // console.log(parsedURL);
             // ["https://developer.mozilla.org/en-US/docs/Web/JavaScript", 
             // "https", "developer.mozilla.org", "en-US/docs/Web/JavaScript"]
-          
+
             const [, protocol, fullhost, fullpath] = parsedURL;
             return protocol;
-          }
-          
-          document.write(parseProtocol("<br/>","<br/>",'http://localhost:3000/'))
-          // "https"
+        }
+
+        document.write(parseProtocol("<br/>", "<br/>", 'http://localhost:3000/'))
+        // "https"
     }
 
     componentDidMount() {
         // this.allConditons();
         // this.newcondition1();
-        this.imageFunction();
+        // this.imageFunction();
         this.arrayFunction();
         this.urlparameter();
         this.seprate();
@@ -341,7 +344,6 @@ export default class BasicJs extends Component {
         // this.destructureFunction();
         // this.forcondition();
         // console.log("Browser Widht", this.newcondition())
-        // console.log(this.ageVote());
         // console.log("Dummy Data==>", dummyData)
     }
 
@@ -352,7 +354,7 @@ export default class BasicJs extends Component {
                 <h1> Condition and Iteration </h1>
                 <div id="demo"></div>
 
-                <img style={{width:200}} src="https://images.unsplash.com/photo-1561016444-14f747499547?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1631&q=80"/>
+                <img style={{ width: 200 }} src="https://images.unsplash.com/photo-1561016444-14f747499547?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1631&q=80" />
             </div>
         )
     }
