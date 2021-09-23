@@ -318,11 +318,9 @@ export default class BasicJs extends Component {
             // console.log(parsedURL);
             // ["https://developer.mozilla.org/en-US/docs/Web/JavaScript", 
             // "https", "developer.mozilla.org", "en-US/docs/Web/JavaScript"]
-
             const [, protocol, fullhost, fullpath] = parsedURL;
             return protocol;
         }
-
         document.write(parseProtocol("<br/>", "<br/>", 'http://localhost:3000/'))
         // "https"
     }
