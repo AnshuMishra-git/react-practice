@@ -7,6 +7,4 @@
 -- Basic of Array-object
 -- Basic of Array-Destrcturing
 -- Basic of Obj-Destrcturing
-
------ Task -------
-1. 
+-- Async & Await
