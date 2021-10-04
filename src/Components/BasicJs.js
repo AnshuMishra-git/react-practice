@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import dummyData from '../FakeData/dummyData'
+import Main from './Main';
 
 // let react={
 //     component:"dergerg"
@@ -357,16 +358,16 @@ export default class BasicJs extends Component {
         // this.allConditons();
         // this.newcondition1();
         // this.imageFunction();
-        this.arrayFunction();
-        this.urlparameter();
-        this.seprate();
-        this.ternaryOperator();
-        this.destructre();
-        this.forcondition();
-        this.foreachfunction();
-        this.ageVote();
-        this.forloop();
-        this.yearsFunction();
+        // this.arrayFunction();
+        // this.urlparameter();
+        // this.seprate();
+        // this.ternaryOperator();
+        // this.destructre();
+        // this.forcondition();
+        // this.foreachfunction();
+        // this.ageVote();
+        // this.forloop();
+        // this.yearsFunction();
         // this.destructureFunction();
         // this.forcondition();
         // console.log("Browser Widht", this.newcondition())
@@ -377,7 +378,8 @@ export default class BasicJs extends Component {
     render() {
         return (
             <div>
-                <h1> Condition and Iteration </h1>
+                <Main />
+                {/* <h1> Condition and Iteration </h1>
                 <div id="demo"></div>
                 {
                     dummyData.map((data) => (
@@ -390,7 +392,7 @@ export default class BasicJs extends Component {
                                 <span>------------</span>
                             </div> : <> {data.id}  + No</>
                     ))
-                }
+                } */}
                 {/* <img style={{ width: 200 }} src="https://images.unsplash.com/photo-1561016444-14f747499547?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1631&q=80" /> */}
             </div >
         )
